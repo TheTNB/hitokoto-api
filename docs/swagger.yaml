@@ -1,0 +1,56 @@
+basePath: /
+definitions:
+  hitokoto.Sentence:
+    properties:
+      commit_from:
+        type: string
+      created_at:
+        type: string
+      creator:
+        type: string
+      creator_uid:
+        type: integer
+      from:
+        type: string
+      from_who:
+        type: string
+      hitokoto:
+        type: string
+      id:
+        type: integer
+      length:
+        type: integer
+      reviewer:
+        type: integer
+      type:
+        type: string
+      uuid:
+        type: string
+    type: object
+info:
+  contact:
+    email: haozi@loli.email
+    name: TreeNewBee
+  description: Hitokoto API version 2.0
+  license:
+    name: WTFPL
+    url: http://www.wtfpl.net/
+  title: Hitokoto
+  version: "2.0"
+paths:
+  /:
+    get:
+      consumes:
+      - application/json
+      description: Get a sentence.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/hitokoto.Sentence'
+      summary: get a sentence
+      tags:
+      - Hitokoto
+swagger: "2.0"

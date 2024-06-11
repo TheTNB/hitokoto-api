@@ -1,0 +1,41 @@
+project_name: hitokoto
+
+builds:
+  - id: hitokoto
+    binary: hitokoto
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    goamd64:
+      - v2
+      - v3
+    ldflags:
+      - -s -w --extldflags "-static"
+
+upx:
+  - enabled: true
+    # Filter by build ID.
+    ids: [ hitokoto ]
+    # Compress argument.
+    # Valid options are from '1' (faster) to '9' (better), and 'best'.
+    compress: best
+    # Whether to try LZMA (slower).
+    lzma: true
+    # Whether to try all methods and filters (slow).
+    brute: false
+
+archives:
+  - id: hitokoto-archive
+    builds:
+      - hitokoto
+    format: zip
+    wrap_in_directory: false
+    strip_binary_directory: true
+    files:
+      - LICENSE

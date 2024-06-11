@@ -1,0 +1,16 @@
+# macOS
+**/.DS_Store
+
+# Dev build
+build/
+tmp/
+*.exe
+
+# Test
+*.out
+
+# Environment variables
+.env
+
+# IDE
+.idea/
