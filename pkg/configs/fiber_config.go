@@ -14,11 +14,12 @@ import (
 func FiberConfig() fiber.Config {
 	// Define server settings.
 	readTimeoutSecondsCount, _ := strconv.Atoi(os.Getenv("SERVER_READ_TIMEOUT"))
+	prefork, _ := strconv.ParseBool(os.Getenv("SERVER_PREFORK"))
 
 	// Return Fiber configuration.
 	return fiber.Config{
 		AppName:     "Hitokoto API",
-		Prefork:     true,
+		Prefork:     prefork,
 		ReadTimeout: time.Second * time.Duration(readTimeoutSecondsCount),
 		JSONDecoder: sonic.Unmarshal,
 		JSONEncoder: sonic.Marshal,

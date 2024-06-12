@@ -28,7 +28,7 @@ type Sentence struct {
 var data embed.FS
 
 var sentences map[string][]Sentence
-var types []string
+var sentenceTypes []string
 
 func init() {
 	sentences = make(map[string][]Sentence)
@@ -53,6 +53,6 @@ func init() {
 		t := strings.TrimSuffix(file.Name(), filepath.Ext(file.Name()))
 
 		sentences[t] = sentence
-		types = append(types, t)
+		sentenceTypes = append(sentenceTypes, t)
 	}
 }

@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	_ "github.com/joho/godotenv/autoload" // load .env file automatically
 
 	_ "github.com/TheTNB/hitokoto-api/docs" // load API Docs files (Swagger)
 	"github.com/TheTNB/hitokoto-api/pkg/configs"

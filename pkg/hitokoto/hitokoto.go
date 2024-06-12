@@ -5,17 +5,20 @@ import (
 	"math/rand/v2"
 )
 
-func Random(t ...string) (Sentence, error) {
-	if len(t) == 0 {
-		t = append(t, types[rand.IntN(len(types))])
-	}
-	if t[0] == "" {
-		t[0] = types[rand.IntN(len(types))]
+func Random(types ...string) (Sentence, error) {
+	if len(types) == 0 || types[0] == "" {
+		types = append(types[:0], sentenceTypes[rand.IntN(len(sentenceTypes))])
 	}
 
-	if _, ok := sentences[t[0]]; !ok {
-		return Sentence{}, fmt.Errorf("type %s not found", t[0])
+	selectedType := types[0]
+	typedSentences, exists := sentences[selectedType]
+	if !exists {
+		return Sentence{}, fmt.Errorf("type %s not found", selectedType)
 	}
 
-	return sentences[t[0]][rand.IntN(len(sentences))], nil
+	return typedSentences[rand.IntN(len(typedSentences))], nil
+}
+
+func Types() []string {
+	return sentenceTypes
 }
