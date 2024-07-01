@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/bytedance/sonic v1.11.9
-	github.com/gofiber/fiber/v2 v2.52.4
+	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/gofiber/swagger v1.0.0
 	github.com/joho/godotenv v1.5.1
 	github.com/stretchr/testify v1.9.0
