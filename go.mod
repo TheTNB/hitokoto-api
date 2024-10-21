@@ -3,12 +3,12 @@ module github.com/TheTNB/hitokoto-api
 go 1.22
 
 require (
-	github.com/bytedance/sonic v1.12.0
+	github.com/bytedance/sonic v1.12.3
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/gofiber/swagger v1.1.0
 	github.com/joho/godotenv v1.5.1
 	github.com/stretchr/testify v1.9.0
-	github.com/swaggo/swag v1.16.3
+	github.com/swaggo/swag v1.16.4
 )
 
 require (
